@@ -8,20 +8,58 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <div class="container-fluid">
-              <a class="navbar-brand">LATENEWS</a>
-              <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+    
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand">LATENEWS</a>
+            <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" href="#">CNN</a>
+              <a class="nav-link" href="#">BBC News</a>
+              <a class="nav-link" href="#">ABC News</a>
+              <a class="nav-link" href="#">Buzzfeed</a>
+              <a class="nav-link" href="#">Fox</a>
+              <a class="nav-link" href="#">Al Jazeera</a>
+              <a class="nav-link" href="#">Business Insider</a>
             </div>
-        </nav>
-        {% block navitems %} 
-        {% endblock %}
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    </div>
+          </div>
+        </div>
+      </nav>
+      <div class="row">
+          <div class="col-2">
+            <ul class="nav flex-column">
+                <p>CATEGORY</p>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">BUSINESS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ENTERTAINMENT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">HEALTH</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SPORTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">TECHNOLOGY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">SCIENCE</a>
+                </li>
+            </ul>
+          </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
 </body>
 </html>
