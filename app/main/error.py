@@ -1,6 +1,7 @@
 from flask import render_template
 from . import main
 
+# Application-wide error handler
 @main.app_errorhandler(404)
 def we_not_here(error):
     '''
