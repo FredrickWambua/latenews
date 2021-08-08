@@ -4,9 +4,10 @@ class Config:
     '''
     This is the general configuration parent class
     '''
-    API_SOURCE_URL = ''
-    CATEGORY_URL = ''
-    API_KEY = ''
+    NEWS_SOURCE_URL = 'https://newsapi.org/v2/sources?apiKey={}'
+    ARTICLES_URL = ''
+    TOP_HEADLINES_URL = 'https://newsapi.org/v2/top-headlines/sources?apiKey={}'
+    API_KEY = os.environ.get('API_KEY')
 
 
 class ProdConfig(Config):
