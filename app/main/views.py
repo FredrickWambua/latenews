@@ -1,6 +1,7 @@
-from flask import render_template
+from flask import render_template, request, redirect, url_for
+from . import main
 from app import app
 
-@app.route('/')
+@main.route('/')
 def base():
     return render_template('base.html')
