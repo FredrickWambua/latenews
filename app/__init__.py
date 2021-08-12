@@ -1,6 +1,5 @@
 
-from app import app
-from flask import Flask, app
+from flask import Flask
 from config import config_options
 
 # Application factory function
