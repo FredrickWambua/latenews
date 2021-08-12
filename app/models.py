@@ -1,4 +1,4 @@
-class NewsSource:
+class Top_headlines:
     '''
     NewsSource class to define the News source Objects
     '''
@@ -8,16 +8,18 @@ class NewsSource:
         self.url= url
 
 
-class Articles:
+class Article:
     '''
-    Articles class to define the article Objects
+    Articles class model to define the article Objects
     '''
-    def __init__(self, title, image, desrciption, author, time, url):
+    def __init__(self, title, source, urlToImage, desrciption, author, publishedAt, url, content):
         self.title = title
-        self.image =image
+        self.source = source
+        self.urlToImage =urlToImage
         self.description = desrciption
         self.author = author
-        self.time = time
+        self.publishedAt = publishedAt
         self.url = url
+        self.content =content
 
 
