@@ -1,16 +1,18 @@
 
 import json, urllib.request
 from requests import get
-from .models import Source, Article
+from .models import Source, Article, Category
 
 base_url = None
 api_key = None
+category_url = None
 def config_request(app):
-    global base_url, api_key
+    global base_url, api_key, category_url
 
     base_url = app.config['NEWS_SOURCE_URL']
     EVERYTHING_END_POINT = 'everything/'
     TOP_HEADLINES_END_POINT = 'top-headlines/'
+    category_url = app.config['CATEGORY_URL']
     api_key = app.config['API_KEY']
 
 
@@ -84,4 +86,21 @@ def process_articles(article_list):
     
     return news_object
 
+def get_category(name):
+    '''
+    function that gets the response to the category json
+    '''
+    get_category_url = category_url.format(name,api_key)
+    print(get_category_url)
+    with urllib.request.urlopen(get_category_url) as url:
+        get_category_data = url.read()
+        get_cartegory_response = json.loads(get_category_data)
+
+        get_cartegory_results = None
+
+        if get_cartegory_response['articles']:
+            get_cartegory_list = get_cartegory_response['articles']
+            get_cartegory_results = process_articles(get_cartegory_list)
+
+    return get_cartegory_results
 
