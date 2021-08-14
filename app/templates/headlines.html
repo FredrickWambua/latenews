@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block headlines %}
+<h3>TOP HEADLINES</h3>
+{% for headline in headlines %}
+<div class="card">
+    <h5 align="center">{{ headline.title }}</h5>
+    <small>Author: {{headline.author}} <span> Published on: {{ headline.publishedAt }} </span> </small>
+    <img src=" {{ headline.urlToImage }} " height="400px" width="100%"  alt="image" >
+    <p>{{ headline.description }}</p>
+    <p>{{ headline.content}} <span></span>    <a href="{{ headline.url }}">Read more</a> </p>
+</div>
+{% endfor %}
+{% endblock %}
