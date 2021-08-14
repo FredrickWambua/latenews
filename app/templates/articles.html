@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>News Articles</h1>
+<h3 align="center">News Articles</h3>
 {% for article in articles %}
-<div class="card mt-3">
-    <h5 class="title mt-3">{{ article.title }}</h5>
+<div class="card m-3">
+  <div class="card-content m-5">
+    <h5 align="center" class="title">{{ article.title }}</h5>
     <small>Author: {{article.author}} <span> Published on: {{ article.publishedAt }} </span> </small>
-    <img src=" {{ article.urlToImage }} " height="400px" alt="image" >
+    <img src=" {{ article.urlToImage }} " height="400px" width="100%"  alt="image" >
     <p>{{ article.description }}</p>
     <p>{{ article.content}} <span></span>    <a href="{{ article.url }}">Read more</a> </p>
+  </div>
 </div>
 {% endfor %}
 {% endblock %}

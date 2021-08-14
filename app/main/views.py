@@ -1,4 +1,5 @@
-from app.requests import get_news_objects, get_articles
+from app.models import Category
+from app.requests import get_category, get_news_objects, get_articles
 from flask import render_template, request, redirect, url_for
 from . import main
 
@@ -19,4 +20,9 @@ def articles(id):
 
     return render_template('articles.html', articles = articles)
 
+@main.route('/categories/<name>')
+def category(name):
 
+    category = get_category(name)
+    
+    return render_template('category.html', category = category)

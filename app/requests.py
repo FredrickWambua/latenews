@@ -90,7 +90,7 @@ def get_category(name):
     '''
     function that gets the response to the category json
     '''
-    get_category_url = category_url.format(name,api_key)
+    get_category_url = 'https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey=ffc5892b0e01428f8dd49bca764e3fd9'
     print(get_category_url)
     with urllib.request.urlopen(get_category_url) as url:
         get_category_data = url.read()
