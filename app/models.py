@@ -22,4 +22,15 @@ class Article:
         self.url = url
         self.content =content
 
-
+class Category:
+    '''
+    Article class inistance for categories objects of the news sources
+    '''
+    def __init__(self, title, urlToImage, desrciption, author, publishedAt, url, content):
+        self.title = title
+        self.urlToImage =urlToImage
+        self.description = desrciption
+        self.author = author
+        self.publishedAt = publishedAt
+        self.url = url
+        self.content =content
