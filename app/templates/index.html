@@ -1,1 +1,9 @@
-<h1>Head</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+{% for source in sources %}
+<div class="news-sources mt-3">
+    <a href="/source/{{ source.name }}" target="_self"> {{ source.name }} </a>
+</div>
+{% endfor %}
+{% endblock %}

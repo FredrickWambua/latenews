@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" 
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
     <title> {% block title %} Late news {% endblock %} </title>
     <title>Document</title>
 </head>
@@ -18,46 +20,13 @@
             </form>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-danger">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <a class="nav-link" href="#">CNN</a>
-              <a class="nav-link" href="#">BBC News</a>
-              <a class="nav-link" href="#">ABC News</a>
-              <a class="nav-link" href="#">Buzzfeed</a>
-              <a class="nav-link" href="#">Fox</a>
-              <a class="nav-link" href="#">Al Jazeera</a>
-              <a class="nav-link" href="#">Business Insider</a>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <div class="row">
-          <div class="col-2">
-            <ul class="nav flex-column">
-                <p>CATEGORY</p>
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">BUSINESS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ENTERTAINMENT</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">HEALTH</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">SPORTS</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">TECHNOLOGY</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">SCIENCE</a>
-                </li>
-            </ul>
-          </div>
-      </div>
+    {% block navbar %}
+    {% endblock %}
+    
+    <div class="container mt-3">
+        {% block content %}
+        {% endblock %}
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     
