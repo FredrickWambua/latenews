@@ -8,6 +8,8 @@ class Config:
 
     EVERYTHING_END_POINT = 'everything/'
     TOP_HEADLINES_END_POINT = 'top-headlines/'
+    CATEGORY_URL='https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey={}'
+
     API_KEY = os.environ.get('API_KEY')
 
 
