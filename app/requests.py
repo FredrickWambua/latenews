@@ -1,11 +1,13 @@
 
 import json, urllib.request
 from requests import get
-from .models import Source, Article, Category
+from .models import Source, Article, Category, Headlines
 
 base_url = None
 api_key = None
 category_url = None
+get_headlines_url = None
+
 def config_request(app):
     global base_url, api_key, category_url
 
@@ -91,7 +93,7 @@ def get_category(name):
     function that gets the response to the category json
     '''
     get_category_url = 'https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey=ffc5892b0e01428f8dd49bca764e3fd9'
-    print(get_category_url)
+
     with urllib.request.urlopen(get_category_url) as url:
         get_category_data = url.read()
         get_cartegory_response = json.loads(get_category_data)
@@ -104,3 +106,20 @@ def get_category(name):
 
     return get_cartegory_results
 
+def get_headlines():
+    '''
+    function that gets the response to the category json
+    '''
+    get_headlines_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=ffc5892b0e01428f8dd49bca764e3fd9'
+    
+    with urllib.request.urlopen(get_headlines_url) as url:
+        get_headlines_data = url.read()
+        get_headlines_response = json.loads(get_headlines_data)
+
+        get_headlines_results = None
+
+        if get_headlines_response['articles']:
+            get_headlines_list = get_headlines_response['articles']
+            get_headlines_results = process_articles(get_headlines_list)
+
+    return get_headlines_results

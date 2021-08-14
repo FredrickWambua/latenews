@@ -1,5 +1,5 @@
-from app.models import Category
-from app.requests import get_category, get_news_objects, get_articles
+
+from app.requests import get_category, get_news_objects, get_articles, get_headlines
 from flask import render_template, request, redirect, url_for
 from . import main
 
@@ -8,11 +8,13 @@ from . import main
 @main.route('/')
 def base():
     source_data = get_news_objects()
+    headlines = get_headlines()
 
-    return render_template('index.html', sources = source_data)
+    return render_template('index.html', sources = source_data, headlines = headlines)
+
 
 @main.route('/source/<id>')
-def articles(id):
+def index(id):
 
     ident= id.replace(" ", "-")
 

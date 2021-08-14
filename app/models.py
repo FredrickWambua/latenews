@@ -34,3 +34,16 @@ class Category:
         self.publishedAt = publishedAt
         self.url = url
         self.content =content
+
+class Headlines:
+    '''
+    Headlines class inistance for headlines objects of the news sources
+    '''
+    def __init__(self, title, urlToImage, desrciption, author, publishedAt, url, content):
+        self.title = title
+        self.urlToImage =urlToImage
+        self.description = desrciption
+        self.author = author
+        self.publishedAt = publishedAt
+        self.url = url
+        self.content =content

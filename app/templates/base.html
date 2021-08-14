@@ -21,11 +21,16 @@
             </div>
         </nav>
     </div>
+    <div class="landing-page">
+            {% block content %}
+            {% endblock %}
    
+    </div>
+ 
     <div class="container">
             <div class="newssource bg-light">
-                {% block content %}
-                {% endblock %}
+               {%  block articles %}
+               {% endblock %}
             </div>
         </div>
     </div>
