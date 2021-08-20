@@ -6,7 +6,7 @@
         <div class="row">
 
             <div class="col-2 ">
-                <h6 style="margin-top: 10px;">NEWS SOURCES</h6>
+                <h6 style="margin-top: 10px; text-align: center;">NEWS SOURCES</h6>
                 {% for source in sources %}
 
                 <div class="news-sources m-3">
@@ -28,7 +28,7 @@
                         <small>Author: {{headline.author}}.</small>
                         <h6 class="date"><small>Published on: {{ headline.publishedAt }} </small></h6> 
                         <img src=" {{ headline.urlToImage }} " height="400px" width="100%"  alt="image" >
-                        <p>{{ headline.description }}</p>
+                        <p class="content mt-3">{{ headline.description }}</p>
                         <p>{{ headline.content}} <span></span>    <a href="{{ headline.url }}">Read more</a> </p>
                     </div>
                 </div>
