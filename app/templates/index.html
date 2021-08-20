@@ -2,29 +2,38 @@
 
 {% block content %} 
 
-{% for source in sources %}
 
-    <div class="container-fluid">
         <div class="row">
-            <div class="col-2 bg-light ">
+
+            <div class="col-2 ">
+                <h6 style="margin-top: 10px;">NEWS SOURCES</h6>
+                {% for source in sources %}
+
                 <div class="news-sources m-3">
-                    <a href="/source/{{ source.name }}" target="_self"> {{ source.name }} </a>
-                </div>           
+                    <a href="/source/{{ source.name }} " style="text-decoration: none; color: red; font-weight: lighter;" target="_self"> {{ source.name|upper }} </a>
+                </div>  
+                {% endfor %} 
+         
             </div>
-    {% endfor %} 
     
-            <div class="col-10 mt-auto" >
+            <div class="col-10 pt-5 bg-light" >
                 <h3 align="center">TOP HEADLINES</h3>
+
+
     {% for headline in headlines %} 
-                <div class="card m-3">
-                    <h5 align="center">{{ headline.title }}</h5>
-                    <small>Author: {{headline.author}} <span> Published on: {{ headline.publishedAt }} </span> </small>
-                    <img src=" {{ headline.urlToImage }} " height="400px" width="100%"  alt="image" >
-                    <p>{{ headline.description }}</p>
-                    <p>{{ headline.content}} <span></span>    <a href="{{ headline.url }}">Read more</a> </p>
+
+                <div class="card mt-3">
+                    <div class="headline-content m-5">
+                        <h5 align="center">{{ headline.title }}</h5>
+                        <small>Author: {{headline.author}}.</small>
+                        <h6 class="date"><small>Published on: {{ headline.publishedAt }} </small></h6> 
+                        <img src=" {{ headline.urlToImage }} " height="400px" width="100%"  alt="image" >
+                        <p>{{ headline.description }}</p>
+                        <p>{{ headline.content}} <span></span>    <a href="{{ headline.url }}">Read more</a> </p>
+                    </div>
                 </div>
+    {% endfor %}
             </div>
         </div>
-    </div>
-{% endfor %}
+
 {% endblock %}
